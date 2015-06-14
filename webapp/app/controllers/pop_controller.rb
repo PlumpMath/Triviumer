@@ -31,7 +31,7 @@ class PopController < ApplicationController
 
     respond_to do |format|
       if @pop.save
-        format.html { notice: 'Pop was successfully created.' }
+        #format.html { notice: 'Pop was successfully created.' }
         format.json { render :show, status: :created }
       else
         format.html { render :new }
