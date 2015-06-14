@@ -1,5 +1,5 @@
 # Triviumer
-Triviumer is a 3D web tool that is elaborating a classical methodology of learning, trivium.
+Triviumer is a 3D web tool which is elaborating a classical methodology of learning, trivium.
 
 ## How to locally start it
 1. Get all requirements
