@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :users, :pop
-  # connect 'static/:path', :controller => 'static', :action => 'show'
+  post 'pop/create' => 'pop#create'
   root 'users#index'
+  # connect 'static/:path', :controller => 'static', :action => 'show'
   # get 'high_voltage/pages/#show' => 'webgl', :id=>'webgl'
 
   # The priority is based upon order of creation: first created -> highest priority.

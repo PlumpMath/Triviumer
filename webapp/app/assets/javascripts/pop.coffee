@@ -5,16 +5,16 @@ console.debug 'pop.coffee loaded'
 
 window.newPop = (name, x, y, z)->
   console.log "#{name} have created on #{x}, #{y}, #{z}"
-  $.post '/pop/create',{
-    data : {
-      name : name
-      X : x
-      Y : y
-      Z : z
-    }
-    success : (rst) =>
+  $.post '/pop/create', {
+      pop: {
+        name: name
+        X: x
+        Y: y
+        Z: z
+      }
+    },
+    (rst) =>
       console.log rst
-  }
 
 window.newCon = (name, sid, eid) ->
   console.debug name, sid, eid

@@ -1,6 +1,6 @@
 class PopController < ApplicationController
   # before_action :set_pop, only: [:show, :edit, :update, :destroy]
-
+  # GET /pop
   def index
     # @pops = Pop.all
     # respond_to do |format|
@@ -23,20 +23,19 @@ class PopController < ApplicationController
   end
 
   def show
-  end
-
-  def create
-    # valid = %w(pop)
-    @pop = Pop.new(pop_params)
+    @pop = Pop.find(params[:id])
 
     respond_to do |format|
-      if @pop.save
-        #format.html { notice: 'Pop was successfully created.' }
-        format.json { render :show, status: :created }
-      else
-        format.html { render :new }
-        format.json { render json: @pop.errors, status: :unprocessable_entity }
-      end
+      format.json { render :json => @pop }
+    end
+  end
+  # POST /pop
+  # POST /pop/create
+  def create
+    @pop = Pop.new(pop_params)
+    respond_to do |format|
+      format.json { render :json =>{}, status: :created }
+      @pop.save
     end
   end
 
@@ -56,6 +55,6 @@ class PopController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pop_params
-      params.require(:pop).permit(:email, :nick, :pass_hash, :pass_salt)
+      params.require(:pop).permit(:name, :X, :Y, :Z)
     end
 end
