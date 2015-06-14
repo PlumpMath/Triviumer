@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  nick: MyString
+  pass_hash: MyString
+  pass_salt: MyString
+
+two:
+  email: MyString
+  nick: MyString
+  pass_hash: MyString
+  pass_salt: MyString
