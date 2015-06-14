@@ -14,7 +14,7 @@ NEO4J_PASS: '<your neo4j password>'
 4. Run below in webapp directory.
 
 ```
-bundle install # acquire gems
+bundle # acquire gems
 rake db:migrate # DB migration
 rails s # start the server. you can give -b 0.0.0.0 option to let the server run in public.
 ```
