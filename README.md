@@ -19,6 +19,9 @@ rake db:migrate # DB migration
 rails s # start the server. you can give -b 0.0.0.0 option to let the server run in public.
 ```
 
+5. Connect to `localhost:3000` with full WebGL supported browsers like Chrome.
+
 ## Requirements
 - Ruby 1.9.3p484 https://www.ruby-lang.org/
 - Neo4j 2.3.0 http://neo4j.com/
+- Latest Chrome
