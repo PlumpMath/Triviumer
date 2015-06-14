@@ -26,11 +26,18 @@ module Triviumer
     # config.jade.pretty = true
     # config.jade.compile_debug = true
     # config.jade.globals = ['helpers']
-    config.web_console.whitelisted_ips = '10.0.2.2'
+    config.web_console.whitelisted_ips = '10.0.2.2' # vagrant host IP
+
+    config.before_configuration do # load local configuration file
+      env_file = File.join(Rails.root, 'config', 'local_env.yml')
+      YAML.load(File.open(env_file)).each do |key, value|
+        ENV[key.to_s] = value
+      end if File.exists?(env_file)
+    end
 
     config.generators { |g| g.orm :neo4j }
     config.neo4j.session_type :server_db
     config.neo4j.session_path = 'http://localhost:7474'
-    config.neo4j.session_options = { basic_auth: { username: 'neo4j', password:'<your password here>'}}
+    config.neo4j.session_options = { basic_auth: { username:ENV['NEO4J_ID'], password:ENV['NEO4J_PASS']}}
   end
 end
